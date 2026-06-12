@@ -2,7 +2,7 @@ interface:
   display_name: "Fluent in Five"
   short_description: "每日真实场景卡，提醒你练 5 分钟英语口语"
   brand_color: "#FF7A1A"
-  default_prompt: "Use $fluent-in-five to remind me to practice English today and give me one 5-minute role-play card."
+  default_prompt: "Use $fluent-in-five when I say 龙虾、龙虾英语 or 龙虾提醒我练英语, and give me today's 5-minute role-play card."
 
 policy:
   allow_implicit_invocation: true

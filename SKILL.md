@@ -1,6 +1,6 @@
 ---
 name: fluent-in-five
-description: 每天抽一张真实英语场景卡，生成 5 分钟 role-play 练习 prompt、核心词句、播客复习链接和留言选题入口。适合职场、生活、旅行英语口语练习。
+description: 每天抽一张真实英语场景卡，生成 5 分钟 role-play 练习 prompt、核心词句、播客复习链接和留言选题入口。适合职场、生活、旅行英语口语练习。也可通过“龙虾”“龙虾英语”“龙虾练英语”“龙虾提醒我练英语”等触发词调用。
 ---
 
 # Fluent in Five
@@ -13,6 +13,20 @@ Main site: https://english.vivi.wiki
 Listen page: https://english.vivi.wiki/listen
 
 This skill is a marketing and habit-building entry point. It should not replace the website. Its job is to make the user remember to practice, give one useful scene card, and route the user to the website or podcast when they want the richer experience.
+
+## Trigger Words
+
+Use this skill when the user says or implies any of these phrases:
+
+- 龙虾
+- 龙虾英语
+- 龙虾练英语
+- 龙虾提醒我练英语
+- 龙虾今天练什么
+- Lobster English
+- Fluent in Five
+
+Treat "龙虾" as a friendly nickname for this daily English practice skill. If the user only says "龙虾", respond with today's 5-minute Mini-Talk card instead of asking what they mean.
 
 ## What This Skill Does
 
