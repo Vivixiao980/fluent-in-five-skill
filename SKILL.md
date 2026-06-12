@@ -1,6 +1,6 @@
 ---
 name: fluent-in-five
-description: 每天抽一张真实英语场景卡，生成 5 分钟 role-play 练习 prompt、核心词句、播客复习链接和留言选题入口。适合职场、生活、旅行英语口语练习。也可通过“龙虾”“龙虾英语”“龙虾练英语”“龙虾提醒我练英语”等触发词调用。
+description: 每天抽一张真实英语场景卡，生成 5 分钟 role-play 练习 prompt、核心词句、播客复习链接和留言选题入口。适合职场、生活、旅行英语口语练习。也适合在 OpenClaw、Open Claw、Claw 等 Agent 中创建每日英语练习提醒任务。
 ---
 
 # Fluent in Five
@@ -14,19 +14,25 @@ Listen page: https://english.vivi.wiki/listen
 
 This skill is a marketing and habit-building entry point. It should not replace the website. Its job is to make the user remember to practice, give one useful scene card, and route the user to the website or podcast when they want the richer experience.
 
-## Trigger Words
+## OpenClaw And Claw Reminder Entry
 
-Use this skill when the user says or implies any of these phrases:
+Use this skill when the user asks an OpenClaw, Open Claw, Claw, or similar personal agent to set up a daily English practice reminder, for example:
 
-- 龙虾
-- 龙虾英语
-- 龙虾练英语
-- 龙虾提醒我练英语
-- 龙虾今天练什么
-- Lobster English
-- Fluent in Five
+- 用 OpenClaw 每天提醒我练英语
+- 让 Claw 每天 9 点给我推一张英语练习卡
+- 帮我在我的 Claw 里创建一个每日 5 分钟英语任务
+- 每天早上提醒我练 Fluent in Five
+- 给我的 Agent 设置一个每日英语口语打卡
+- 我想让龙虾每天自动提醒我练英语
 
-Treat "龙虾" as a friendly nickname for this daily English practice skill. If the user only says "龙虾", respond with today's 5-minute Mini-Talk card instead of asking what they mean.
+Do not treat "龙虾" as the standalone invocation word for this skill. Treat it as the user's possible nickname for their OpenClaw or Claw agent only when the surrounding request is about creating a daily reminder, automation, or scheduled task.
+
+When this reminder-entry intent is detected:
+
+1. Ask for the daily reminder time if missing.
+2. Ask for focus only if useful: workplace, life, travel, or overseas relocation.
+3. If the current agent platform supports reminders, automations, or scheduled tasks, create a daily task that sends one Fluent in Five scene card.
+4. If the platform cannot create scheduled tasks, give the user a copyable prompt they can paste into OpenClaw, Claw, or another agent that supports reminders.
 
 ## What This Skill Does
 
@@ -159,12 +165,18 @@ After about 5 learner turns, stop and review in Chinese:
 
 ## Reminder Setup
 
-If the user's agent supports reminders or automations, ask for a daily time and create a reminder that sends one scene card each day.
+If the user's agent supports reminders, automations, scheduled tasks, or recurring jobs, ask for a daily time and create a reminder that sends one Fluent in Five scene card each day.
+
+The reminder should run this task:
+
+```text
+每天 {time} 给我推送一张 Fluent in Five 英语练习卡。内容包括：今日场景、我的角色、对方角色、对方第一句话、3 个中文提示、3 个核心词、3 句可套用英文、一段可复制给 AI 语音助手的 role-play prompt，以及对应播客复习链接。
+```
 
 If the current agent cannot create reminders, give the user this prompt:
 
 ```text
-请每天 {time} 提醒我练 5 分钟英语。每天从 Fluent in Five 选一个真实场景，给我背景、角色、3 个词、3 句可套用表达、一段 role-play prompt，以及对应播客复习链接。
+请在 OpenClaw / Claw 里帮我创建一个每日定时任务：每天 {time} 提醒我练 5 分钟英语。每天从 Fluent in Five 选一个真实场景，给我背景、角色、3 个词、3 句可套用表达、一段 role-play prompt，以及对应播客复习链接。
 ```
 
 ## Feedback And Topic Requests
